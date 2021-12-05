@@ -19,7 +19,7 @@ public class proximidad extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_proximidad);
         sensorManager=(SensorManager)getSystemService(SENSOR_SERVICE);
         //seleccionamos el tipo de sensor que utilizaremos en este caso es de proxymidad
         sensor=sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
