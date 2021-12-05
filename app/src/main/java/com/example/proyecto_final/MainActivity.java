@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     Fragment fragmentPre,fragmentFrag;
 
     Button btn_ace;
+    Button btn_prox
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +30,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,AcelerometroActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        btn_prox=findViewById(R.id.btn_proximidad);
+        btn_prox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Intent intent = new Intent(MainActivity.this,.class);
+                //startActivity(intent);
             }
         });
 
