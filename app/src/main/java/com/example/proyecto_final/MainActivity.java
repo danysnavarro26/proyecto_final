@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     Fragment fragmentPre,fragmentFrag;
 
     Button btn_ace;
-    Button btn_prox
+    Button btn_prox;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
