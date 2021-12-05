@@ -6,13 +6,68 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Proyecto Final"
+            android:textColor="#0E1745"
+            android:textSize="40dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_prese"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="1dp"
+
+            android:onClick="onClick"
+            android:paddingVertical="20dp"
+            android:text="Presentación" />
+
+        <Button
+            android:id="@+id/btn_fragmentos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="1dp"
+            android:onClick="onClick"
+            android:paddingVertical="20dp"
+            android:text="Fragmentos" />
+
+        <Button
+            android:id="@+id/btn_acelerometro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="1dp"
+            android:layout_marginHorizontal="10dp"
+            android:paddingVertical="20dp"
+            android:text="Sensor Acelerómetro" />
+
+        <Button
+            android:id="@+id/btn_proximidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="1dp"
+            android:layout_marginHorizontal="10dp"
+            android:paddingVertical="20dp"
+            android:text="Sensor de Proximidad" />
+
+        <FrameLayout
+            android:id="@+id/contenedorFragments"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:background="#95A0EA" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
