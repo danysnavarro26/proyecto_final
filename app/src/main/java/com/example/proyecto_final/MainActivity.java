@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
         btn_prox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent intent = new Intent(MainActivity.this,.class);
-                //startActivity(intent);
+                Intent intent = new Intent(MainActivity.this,proximidad.class);
+                startActivity(intent);
             }
         });
 
