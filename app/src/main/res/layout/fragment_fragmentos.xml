@@ -12,7 +12,7 @@
         android:text="Fragment\n\nUn Fragment representa un comportamiento o una parte de la interfaz de usuario en una FragmentActivity. Puedes combinar varios fragmentos en una sola actividad para crear una IU multipanel y volver a usar un fragmento en diferentes actividades."
         android:layout_marginTop="50dp"
         android:layout_marginHorizontal="15dp"
-        android:textColor="#13296A"
+        android:textColor="@color/white"
         android:textAlignment="center"
         android:textSize="20dp"
         android:textStyle="bold"/>

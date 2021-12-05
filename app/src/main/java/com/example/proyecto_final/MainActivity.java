@@ -4,14 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     FragmentTransaction transaction;
     Fragment fragmentPre,fragmentFrag;
 
-
+    Button btn_ace;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +21,16 @@ public class MainActivity extends AppCompatActivity {
 
         fragmentPre=new PresentacionFragment();
         fragmentFrag=new FragmentosFragment();
+
+        btn_ace=findViewById(R.id.btn_acelerometro);
+
+        btn_ace.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,AcelerometroActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
