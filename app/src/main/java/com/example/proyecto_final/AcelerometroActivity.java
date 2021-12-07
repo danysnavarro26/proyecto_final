@@ -12,9 +12,9 @@ import android.widget.TextView;
 
 public class AcelerometroActivity extends AppCompatActivity {
     // variables del sensor
-    SensorManager sensorManager;
-    Sensor sensor;
-    SensorEventListener sensorEventListener;
+    SensorManager sensorManager; //Nos permite acceder al sensor del dispositivo
+    Sensor sensor; // esta variable representara el sensor
+    SensorEventListener sensorEventListener; // este evento nos avisará cuando movamos el telefono
 
     //variables de los componentes
     TextView txt_ani;
@@ -29,15 +29,15 @@ public class AcelerometroActivity extends AppCompatActivity {
         txt_ani=findViewById(R.id.txt_animal);
         img_ani=findViewById(R.id.img_animal);
 
-        sensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
-        sensor=sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        if(sensor==null)
+        sensorManager = (SensorManager)getSystemService(SENSOR_SERVICE); // creamos una instancia de la clase SensorManager
+        sensor=sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER); // especificamos el sensor que utilizamos
+        if(sensor==null) // verificación para ver si existe el sensor
             finish();
 
         sensorEventListener= new SensorEventListener() {
             @Override
             public void onSensorChanged(SensorEvent sensorEvent) {
-                float x = sensorEvent.values[0];
+                float x = sensorEvent.values[0]; //nos regresa el valor del movimiento en el eje x
                 //txt_ani.setText("valor: "+x);
                 if(x<-5){
                     if(val==true){
@@ -72,10 +72,12 @@ public class AcelerometroActivity extends AppCompatActivity {
     }
 
     private void start(){
+        //función para iniciar el sensor
         sensorManager.registerListener(sensorEventListener,sensor,SensorManager.SENSOR_DELAY_NORMAL);
     }
 
     private void stop(){
+        //metodo para detener el sensor
         sensorManager.unregisterListener(sensorEventListener);
     }
 
