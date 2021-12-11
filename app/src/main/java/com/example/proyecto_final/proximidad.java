@@ -7,6 +7,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.widget.TextView;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,11 +16,13 @@ public class proximidad extends AppCompatActivity {
     SensorManager sensorManager;
     Sensor sensor;
     SensorEventListener sensorEventListener;
+    TextView dista;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_proximidad);
+        dista=findViewById(R.id.txt_dist);
         sensorManager=(SensorManager)getSystemService(SENSOR_SERVICE);
         //seleccionamos el tipo de sensor que utilizaremos en este caso es de proxymidad
         sensor=sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
@@ -39,9 +42,10 @@ public class proximidad extends AppCompatActivity {
                 if(sensorEvent.values[0]<sensor.getMaximumRange()){
                     // si secumple quiere decir que estamos dentro del rango dl sensor
                     getWindow().getDecorView().setBackgroundColor(Color.RED);
+                    dista.setText(""+sensorEvent.values[0]);
                 }else{
                     getWindow().getDecorView().setBackgroundColor(Color.CYAN);
-
+                    dista.setText(""+sensorEvent.values[0]);
                 }
             }
             // e ste metodo se utiliza cuando la preciosion de un sensor ha cambiado
